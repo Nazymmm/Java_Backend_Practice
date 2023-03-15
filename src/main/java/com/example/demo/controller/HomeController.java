@@ -72,7 +72,7 @@ public class HomeController {
             }
         }
 
-        return "redirect:/";
+        return "redirect:/signin";
     }
     @GetMapping("/loadForgotPassword")
     public String loadForgotPassword(){

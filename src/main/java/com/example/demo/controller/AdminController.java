@@ -66,7 +66,6 @@ public class AdminController {
 
 //    @RequestMapping(path = "/createUser", method = { RequestMethod.GET })
 
-
     @GetMapping("/createUser")
     public String createOrUpdateUserView(Model model)
     {
