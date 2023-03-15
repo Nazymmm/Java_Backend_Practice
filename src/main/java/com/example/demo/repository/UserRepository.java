@@ -6,7 +6,7 @@ import com.example.demo.model.UserDtls;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends JpaRepository<UserDtls, Integer> {
+public interface UserRepository extends JpaRepository<UserDtls, Integer>  {
 
     public boolean existsByEmail(String email);
 

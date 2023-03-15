@@ -72,24 +72,27 @@ public class HomeController {
             }
         }
 
-        return "redirect:/register";
+        return "redirect:/";
     }
     @GetMapping("/loadForgotPassword")
     public String loadForgotPassword(){
         return "forgot_password";
     }
+
     @GetMapping("/loadResetPassword/{id}")
     public String loadResetPassword(@PathVariable int id, Model m){
         m.addAttribute("id", id);
         return "reset_password";
     }
 
+
+
     @PostMapping("forgotPassword")
     public String forgotPassword(@RequestParam String email,@RequestParam String mobileNum,HttpSession session){
 
         UserDtls user = userRepo.findByEmailAndMobileNumber(email,mobileNum);
         if (user!=null){
-            return "redirect:/loadResetPassword" + user.getId();
+            return "redirect:/loadResetPassword/" + user.getId();
         }else {
             session.setAttribute("msg","invalid email & mobile number");
             return "forgot_password";

@@ -4,7 +4,7 @@
 <!--<head>-->
 <!--  <meta charset="utf-8">-->
 <!--  <meta http-equiv="x-ua-compatible" content="ie=edge">-->
-<!--  <title>All Users</title>-->
+<!--  <title>Add Users</title>-->
 <!--  <meta name="viewport" content="width=device-width, initial-scale=1">-->
 <!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">-->
 <!--  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">-->
@@ -42,52 +42,48 @@
 <!--</nav>-->
 
 
-<!--<div class="card" style="padding-top: 50px;">-->
-<!--  <div class="card-body">-->
+<!--<div class="container my-5" style="padding-top: 30px;">-->
 
-<!--    <div th:switch="${users}" class="container my-5">-->
-<!--      <p class="my-5">-->
-<!--        <a href="/edit" class="btn btn-primary">-->
-<!--          <i class="fas fa-user-plus ml-2"> Add Users </i></a>-->
-<!--      </p>-->
+<!--  <h3> Add Users</h3>-->
 
 
+<!--  <div class="card">-->
+<!--    <div class="card-body">-->
 <!--      <div class="col-md-10">-->
-<!--        &lt;!&ndash;        <h2 th:case="null">No record found !!</h2>&ndash;&gt;-->
-<!--        <div th:case="*">-->
-<!--          <table class="table table-striped table-responsive-md">-->
-<!--            <thead>-->
-<!--            <tr>-->
-<!--              <th>First Name</th>-->
-<!--              <th>Email</th>-->
-<!--              <th>Edit</th>-->
-<!--              <th>Delete</th>-->
-<!--            </tr>-->
-<!--            </thead>-->
-<!--            <tbody>-->
-<!--            <tr th:each="user : ${users}">-->
-<!--              <td th:text="${user.firstname}"></td>-->
-<!--              <td th:text="${user.email}"></td>-->
-<!--              <td>-->
-<!--                <a th:href="@{/edit/{id}(id=${user.id})}" class="btn btn-primary">-->
-<!--                  <i class="fas fa-user-edit ml-2"></i>-->
-<!--                </a>-->
-<!--              </td>-->
-<!--              <td>-->
-<!--                <a th:href="@{/delete/{id}(id=${user.id})}" class="btn btn-primary">-->
-<!--                  <i class="fas fa-user-times ml-2"></i>-->
-<!--                </a>-->
-<!--              </td>-->
-<!--            </tr>-->
-<!--            </tbody>-->
-<!--          </table>-->
-<!--        </div>-->
+<!--        <form th:action="@{/admin/editUser}" th:object="${user}" method="post">-->
 
+<!--          <div class="row">-->
+
+<!--            <div class="form-group col-md-8">-->
+<!--              <label for="firstname" class="col-form-label">First Name</label>-->
+<!--              <input type="text" th:field="*{firstname}" class="form-control"-->
+<!--                     id="firstname" placeholder="First Name" />-->
+<!--            </div>-->
+<!--            <div class="form-group col-md-8">-->
+<!--              <label for="email" class="col-form-label">Email</label>-->
+<!--              <input type="text" th:field="*{email}" class="form-control"-->
+<!--                     id="email" placeholder="Email Id" />-->
+<!--            </div>-->
+
+<!--            <div class="form-group col-md-8">-->
+<!--              <label for="password" class="col-form-label">Password</label>-->
+<!--              <input type="text" th:field="*{password}" class="form-control"-->
+<!--                     id="password" placeholder="Password" />-->
+
+<!--            </div>-->
+
+<!--            <div class="col-md-6">-->
+<!--              <input type="submit" class="btn btn-primary" value=" Submit ">-->
+<!--            </div>-->
+
+<!--            <input type="hidden" id="id" th:field="*{id}">-->
+
+<!--          </div>-->
+<!--        </form>-->
 <!--      </div>-->
 <!--    </div>-->
 <!--  </div>-->
 <!--</div>-->
-
 <!--</body>-->
 
 <!--</html>-->

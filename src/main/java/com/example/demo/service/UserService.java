@@ -3,11 +3,15 @@ package com.example.demo.service;
 import com.example.demo.model.UserDtls;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public interface UserService {
 
-    public UserDtls createUser(UserDtls user);
+     UserDtls createUser(UserDtls user);
 
-    public boolean checkEmail(String email);
+     boolean checkEmail(String email);
+
+     List<UserDtls> getAllUsers();
 
 }
