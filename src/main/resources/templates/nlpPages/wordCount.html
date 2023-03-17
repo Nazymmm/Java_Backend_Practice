@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Подсчет слов и предложение</title>
+  <!-- Подключение стилей Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h1 class="my-4">Подсчет слов и предложение</h1>
+  <form method="post" action="/count">
+    <div class="form-group">
+      <label for="text">Введите текст:</label>
+      <textarea class="form-control" id="text" name="text" rows="10"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Подсчитать слова</button>
+  </form>
+
+  <div th:if="${wordCount != null}" class="my-4">
+    <p>Количество слов: <span th:text="${wordCount}"></span></p>
+    <p>Количество предложений: <span th:text="${sentenceCount}"></span></p>
+  </div>
+  <a href="#" onclick="history.back();" class="btn btn-secondary">Назад</a>
+
+</div>
+
+<!-- Подключение скриптов Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

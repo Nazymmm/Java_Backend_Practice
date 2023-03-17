@@ -62,6 +62,9 @@ public class UserController {
             System.out.println("Wrong");
             session.setAttribute("errorMsg","Old password incorrect");
         }
-        return "redirect:/user/changPass";
+        return "redirect:/changPass";
     }
+
+
+
 }

@@ -110,4 +110,12 @@ public class HomeController {
         }
         return "redirect:/loadForgotPassword";
     }
+
+//    @PutMapping("/user/{id}")
+//    User updateUser(@RequestBody User newUser,@PathVariable Integer id){
+//        return userRepo.findById(id)
+//                .map(userDtls -> ){
+//
+//        }
+//    }
 }
