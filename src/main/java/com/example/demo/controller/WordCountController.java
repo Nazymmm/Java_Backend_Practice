@@ -53,6 +53,7 @@ public class WordCountController {
             count++;
         }
         return count;
+        //byhbjbhj
     }
     private int countSentences(String text) {
         String[] sentences = sentenceDetector.sentDetect(text);
